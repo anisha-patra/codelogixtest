@@ -223,6 +223,7 @@ export default function App() {
 
 
     const fetchVisitorLogdetail = async (id) => {
+        console.log("id", id);
         const dbRef = getDatabase();
         let user_id = reactLocalStorage.getObject("userData");
 
