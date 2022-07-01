@@ -1,0 +1,388 @@
+/*html, body {
+  height: 100%; }
+
+.container {
+  overflow: hidden;
+  background-color: #ea2222; }*/
+
+
+.nav_toggle {
+	display: none;
+	cursor: pointer;
+}
+
+
+.off_canvas_container {
+	background: #fff;
+	width: 280px;
+	padding-right: 0;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+	display: none;
+	overflow-x: hidden;
+}
+.off_canvas_toggles{
+	background: #f02f34;
+}
+ @media only screen and (max-width: 991px) {
+ .off_canvas_container {
+ display: block;
+}
+}
+.off_canvas_top_menu {
+	display: block;
+	/* position: fixed;*/
+  top: 0;
+	z-index: 3;
+	padding-right: 0;
+	left: 0;
+	height: 3em;
+}
+.off_canvas_toggles {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.nav_close_btn, .nav_prev_btn {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+}
+.nav_prev_btn {
+	display: none;
+	left: 0;
+}
+nav.off_canvas {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin-top: 3em;
+	display: none;
+	width: 100%;
+	overflow: hidden;
+	overflow-y: scroll;
+overflow-x: hidden;
+}
+nav.off_canvas ul {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	/*overflow-x: hidden;
+	overflow-y: scroll;*/
+}
+nav.off_canvas a, nav.off_canvas a:link, nav.off_canvas a:visited {
+	display: block;
+}
+nav.off_canvas > ul ul {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	width: 100%;
+	left: 280px;
+	display: block;
+	-webkit-transition: left 0.35s ease-in-out;
+	-moz-transition: left 0.35s ease-in-out;
+	-ms-transition: left 0.35s ease-in-out;
+	-o-transition: left 0.35s ease-in-out;
+	transition: left 0.35s ease-in-out;
+}
+nav.off_canvas span.nav_next_btn {
+	position: absolute;
+	text-decoration: none;
+	right: 0;
+	display: inline-block;
+}
+nav.off_canvas ul.nav_level_current {
+	z-index: 2;
+	left: 0;
+	display: block;
+}
+nav.off_canvas ul.nav_level_prev {
+	z-index: 1;
+	left: 0;
+	display: block;
+	overflow: hidden;
+}
+ @media only screen and (max-width: 991px) {
+ nav.main_nav {
+ display: none;
+}
+ nav.off_canvas {
+ display: block;
+}
+ .nav_toggle {
+ display: inline-block;
+ position: absolute;
+ top:0;
+ left: 0;
+}
+ .off_canvas_animate.open {
+ opacity: 1;
+ position: fixed;
+ left: 0;
+ -webkit-animation: slideIn 0.35s ease-in-out;
+ -moz-animation: slideIn 0.35s ease-in-out;
+ -o-animation: slideIn 0.35s ease-in-out;
+ animation: slideIn 0.35s ease-in-out;
+}
+ @-webkit-keyframes slideIn {
+ 0% {
+ opacity: .3;
+ left: 3.25em;
+}
+ 100% {
+ opacity: 1;
+ left: 0;
+}
+}
+ @-moz-keyframes slideIn {
+ 0% {
+ opacity: .3;
+ left: 3.25em;
+}
+ 100% {
+ opacity: 1;
+ left: 0;
+}
+}
+ @-o-keyframes slideIn {
+ 0% {
+ opacity: .3;
+ left: 3.25em;
+}
+ 100% {
+ opacity: 1;
+ left: 0;
+}
+}
+ @keyframes slideIn {
+ 0% {
+ opacity: .3;
+ left: 3.25em;
+}
+ 100% {
+ opacity: 1;
+ left: 0;
+}
+}
+
+  /*Nav Shrinking Closed Effect*/
+  .off_canvas_animate.close {
+ opacity: .3;
+ left: 3.25em;
+ -webkit-animation: slideOut 0.35s ease-in-out;
+ -moz-animation: slideOut 0.35s ease-in-out;
+ -o-animation: slideOut 0.35s ease-in-out;
+ animation: slideOut 0.35s ease-in-out;
+}
+ @-webkit-keyframes slideOut {
+ 0% {
+ opacity: 1;
+ left: 0;
+}
+ 100% {
+ opacity: .3;
+ left: 3.25em;
+}
+}
+ @-moz-keyframes slideOut {
+ 0% {
+ opacity: 1;
+ left: 0;
+}
+ 100% {
+ opacity: .3;
+ left: 3.25em;
+}
+}
+ @-o-keyframes slideOut {
+ 0% {
+ opacity: 1;
+ left: 0;
+}
+ 100% {
+ opacity: .3;
+ left: 3.25em;
+}
+}
+ @keyframes slideOut {
+ 0% {
+ opacity: 1;
+ left: 0;
+}
+ 100% {
+ opacity: .3;
+ left: 3.25em;
+}
+}
+ .off_canvas_container.open {
+ overflow-x: hidden;
+ overflow-y: scroll;
+}
+ .off_canvas_container.open ul.nav_level_current {
+ overflow-x: hidden;
+ overflow-y: scroll;
+}
+ .content_animate {
+ left: 0;
+}
+
+  /* CONTENT ANNIMATION */
+  .content_animate.open {
+ cursor: pointer;
+ left: 13em;
+ -webkit-animation: open 0.5s ease-in-out;
+ -moz-animation: open 0.5s ease-in-out;
+ -o-animation: open 0.5s ease-in-out;
+ animation: open 0.5s ease-in-out;
+}
+ @-webkit-keyframes open {
+ 0% {
+ left: 0;
+}
+ 70% {
+ left: 14.5em;
+}
+ 100% {
+ left: 13em;
+}
+}
+ @-moz-keyframes open {
+ 0% {
+ left: 0;
+}
+ 70% {
+ left: 14.5em;
+}
+ 100% {
+ left: 13em;
+}
+}
+ @-o-keyframes open {
+ 0% {
+ left: 0;
+}
+ 70% {
+ left: 14.5em;
+}
+ 100% {
+ left: 13em;
+}
+}
+ @keyframes open {
+ 0% {
+ left: 0;
+}
+ 70% {
+ left: 14.5em;
+}
+ 100% {
+ left: 13em;
+}
+}
+
+  /*Content Sliding Closed Effect*/
+  .content_animate.close {
+ left: 0;
+ -webkit-animation: close 0.4s ease-in-out;
+ -moz-animation: close 0.4s ease-in-out;
+ -o-animation: close 0.4s ease-in-out;
+ animation: close 0.4s ease-in-out;
+}
+ @-webkit-keyframes close {
+ 0% {
+ left: 13em;
+}
+ 70% {
+ left: -1.5em;
+}
+ 100% {
+ left: 0;
+}
+}
+ @-moz-keyframes close {
+ 0% {
+ left: 13em;
+}
+ 70% {
+ left: -1.5em;
+}
+ 100% {
+ left: 0;
+}
+}
+ @-o-keyframes close {
+ 0% {
+ left: 13em;
+}
+ 70% {
+ left: -1.5em;
+}
+ 100% {
+ left: 0;
+}
+}
+ @keyframes close {
+ 0% {
+ left: 13em;
+}
+ 70% {
+ left: -1.5em;
+}
+ 100% {
+ left: 0;
+}
+}
+}
+/*rabin*/  
+.openMenu {
+	position: fixed;
+	left: 0 !important;
+	z-index: 99999999;
+	transition: all .5s ease;
+	box-shadow: 0 2px 40px #878686;
+}
+.left_menu_1 {
+	left:-281px;
+	transition: all .5s ease;
+}
+
+.for_all_cat_sub_cat .adjust_rm02 {
+	background: #202e48 !important;
+	color: #FFF !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	font-family: 'allerregular' !important;
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+.nav_toggle {
+    top: 5px;
+}
+}
+
+
+
+
+
+
+
+
+
+
